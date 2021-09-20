@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -58,6 +59,7 @@ namespace NaviLogger
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
             
             // At the end, start logging from now
+            Thread.Sleep(30000);
             loggerService.StartLogging();
         }
     }
